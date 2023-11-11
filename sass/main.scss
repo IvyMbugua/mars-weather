@@ -1,3 +1,5 @@
+// Where we make things look pretty
+
 *,
 *::before,
 *::after {
@@ -18,10 +20,9 @@
     --clr-dark: #444;
     --clr-accent: #D06D6D;
     --clr-accent-dark: #613131;
+  }
 
-}
-
-.sr-only:not(:focus):not(:active) {
+  .sr-only:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -29,32 +30,26 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
-}
+  }
 
-body {
+  body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    background-image: url(../img/2.jpg);
+    background-image: url(../img/mars.jpg);
     background-size: cover;
     color: var(--clr-light);
     min-height: 100vh;
-}
+} 
 
-h1,
-h2,
-h3 { 
-    
-    line-height: 1;
-}
+h1, h2, h3 { line-height: 1; }
 
-a {
+a { 
     color: var(--clr-accent);
 
     &:hover {
         color: var(--clr-accent-dark);
     }
-
 }
 
 .main-title {
@@ -72,7 +67,7 @@ a {
     margin: 0;
 }
 
-.section-title-date {
+.section-title--date {
     font-size: var(--fs-xl);
 }
 
@@ -82,17 +77,18 @@ a {
     color: var(--clr-gray);
 }
 
+
 .mars-current-weather {
-    background: rgba($color: #000000, $alpha: 0.7);
+    background: rgba(0,0,0,.7);
     padding: 6em 2em 2em;
     max-width: 1000px;
-    margin: 1rem;
+    margin: 1em;
 }
 
 .date {
     grid-column: 1 / 2;
 
-    &_day {
+    &__day {
         font-size: var(--fs-h2);
         margin: 0;
         color: var(--clr-gray);
@@ -101,7 +97,7 @@ a {
 }
 
 .temp {
-    --border: solid .25em varvar(--clr-dark);
+    --border: solid .25em var(--clr-accent-dark);
     padding: 2em 0;
 }
 
@@ -117,7 +113,7 @@ a {
         grid-column: 1 / 2;
     }
 
-    &_direction {
+    &__direction {
         --size: 4rem;
         width: var(--size);
         height: var(--size);
@@ -129,13 +125,15 @@ a {
         grid-row: 1 / span 2;
     }
 
-    &_arrow {
+    &__arrow {
+        /* update Custom Props in JS
+        to update the direction */
         --direction: 180deg;
         --size: .75rem;
         height: calc(var(--size) * 3);
         width: var(--size);
         background: var(--clr-accent-dark);
-        clip-path: polygon(50% 0, 0% 100% 100% 100%);
+        clip-path: polygon(50% 0, 0% 100%, 100% 100%);
         transform: translateY(-50%) rotate(var(--direction));
         transform-origin: bottom center;
 
@@ -143,25 +141,25 @@ a {
     }
 }
 
+
 .unit {
     @media (max-width: 900px) {
         position: absolute;
         left: 3em;
         top: 3em;
     }
-
     grid-column: 3 / 4;
     place-self: end;
     color: var(--clr-light);
     display: flex;
-    opacity: 70%;
+    opacity: .7;
     transition: opacity 275ms linear;
 
     &:hover {
-        opacity: 100%
+        opacity: 1;
     }
 
-    label {
+   label {
         cursor: pointer;
     }
 
@@ -175,7 +173,7 @@ a {
         width: 1px;
     }
 
-    &_toggle {
+    &__toggle {
         cursor: pointer;
         width: 4em;
         border: 2px solid var(--clr-light);
@@ -197,7 +195,7 @@ a {
     }
 }
 
-:checked ~ .unit_toggle::after {
+:checked ~ .unit__toggle::after {
     margin-left: 3px;
 }
 
@@ -216,7 +214,7 @@ a {
 .show-previous-weather {
 
 
-     position: absolute;
+    position: absolute;
     background: var(--clr-light);
     left: 50%;
     width: 10rem;
@@ -240,7 +238,6 @@ a {
         transform: rotate(0);
         transition: transform 300ms ease;
     }
-
 }
 
 .previous-days {
@@ -248,21 +245,21 @@ a {
     justify-content: space-between;
 }
 
-.previous-weather_title {
-    text-align:center
+.previous-weather__title {
+    text-align: center;
 }
 
 .previous-day {
-    oppacity: 0;
+    opacity: 0;
 
     & > * {margin: 0;}
 
-    &_date {
+    &__date {
         font-size: .9rem;
         color: var(--clr-gray);
     }
 
-    &_more-info {
+    &__more-info {
         cursor: pointer;
         border: 0;
         border-radius: 100vmax;
@@ -275,9 +272,12 @@ a {
         &:hover {
             background: var(--clr-gray);
         }
-
     }
+
+
 }
+
+
 
 .show-weather.previous-weather {
     transform: translateY(0);
@@ -391,4 +391,3 @@ a {
         grid-column: 1 / 3;
     }
 }
-
