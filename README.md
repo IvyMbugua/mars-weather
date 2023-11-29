@@ -4,7 +4,7 @@ This project shows a few interesting details about the weather on Mars, specific
 
 Now, the API provides a ton of interesting details, but I've narrowed it down to just a few key ones that I display. Here's what you'll find:
 
-- ☀️Sol: which refers to the solar day on Mars.
+- ☀️Sol (which refers to the solar day on Mars.)
 - 📅Date
 - 🌡️Max and Min Temperature (in ℃ and ℉)
 - 🌬️Avg Wind Speed (in kph and mph )
