@@ -1,5 +1,11 @@
-const API_KEY = 'vmobLIOdXZRaREqXumsGQpaF7VJoLrQ5T3sHuJT8'
-const API_URL = `https://api.nasa.gov/insight_weather/?api_key=${API_KEY}&feedtype=json&ver=1.0`
+const API_KEY = 'DEMO_KEY'
+const API_URL = 'https://mars.nasa.gov/rss/api/?feed=weather&category=insight_temperature&feedtype=json&ver=1.0'
+
+//You can generate your own API Key on Insights
+//API generated has incorrect data and won't work. Update the API_URL to the one that's active on line 2.
+
+// const API_KEY = 'DEMO_KEY'
+// const API_URL = `https://api.nasa.gov/insight_weather/?api_key=${API_KEY}&feedtype=json&ver=1.0`
 
 
 const previousWeatherToggle = document.querySelector('.show-previous-weather');
