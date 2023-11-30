@@ -6,8 +6,8 @@ Now, the API provides a ton of interesting details, but I've narrowed it down to
 
 - ☀️Sol (which refers to the solar day on Mars.)
 - 📅Date
-- 🌡️Max and Min Temperature (in ℃ and ℉)
-- 🌬️Avg Wind Speed (in kph and mph )
+- 🌡️Maximum and minimum temperature
+- 🌬️Average Wind Speed
 - 🧭Wind Direction
 
 This Mars Weather project has been deployed on [Vercel](https://mars-weather-azure.vercel.app/).
